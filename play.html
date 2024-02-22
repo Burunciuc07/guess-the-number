@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Guess the Number</title>
+</head>
+<body>
+    <h1>Guess the Number Game</h1>
+    <p>Try to guess the correct number!</p>
+    
+    <!-- Form for submitting the player's guess -->
+    <form method="post" action="{{ url_for('play') }}">
+        <label for="guess">Enter your guess:</label>
+        <input type="number" name="guess" required>
+        <button type="submit">Submit Guess</button>
+    </form>
+ <!-- Display feedback message if available -->
+ {% if message %}
+ <p>{{ message }}</p>
+{% endif %}
+    <!-- Add any additional content, such as game results or hints, here -->
+
+</body>
+</html>
